@@ -12,11 +12,13 @@ console.log(pastLinks)
 
 
 inputBtn.addEventListener("click",function(){ /*What happens on click of Input button*/
-    myLinks.push(inputEl.value)
-    inputEl.value = ""
-    localStorage.setItem("myLinks",JSON.stringify(myLinks))
-    render(myLinks)
-    console.log(localStorage.getItem("myLinks"))
+    //myLinks.push(inputEl.value)
+    //inputEl.value = ""
+    chrome.tabs.query({active:true, currentWindow: true}, function(tabs){
+        myLinks.push(tabs[0].url)
+        localStorage.setItem("myLinks",JSON.stringify(myLinks))
+        render(myLinks)
+    })
 })
 
 deleteBtn.addEventListener("dblclick",function(){
