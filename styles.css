@@ -13,11 +13,20 @@ input{
     margin-bottom: 8px;
 }
 
+button{
+    padding: 10px 20px;
+}
+
 #input-btn{
     background-color: #784B84;
     color: aliceblue;
     border: none;
-    padding: 10px 20px;
+}
+
+#delete-btn{
+    background-color: aliceblue;
+    color: #784B84;
+    border: 1px solid #784B84;
 }
 
 ul{
